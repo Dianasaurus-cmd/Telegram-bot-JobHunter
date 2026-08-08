@@ -63,7 +63,7 @@ async def load_names(update: Update, context: ContextTypes.DEFAULT_TYPE, page_st
     await context.bot.send_message(chat_id = update.effective_chat.id, text =f"Отлично! будем искать профессию по ключевому слову: {user_name}")
     print('started...')
     await context.bot.send_message(chat_id = update.effective_chat.id, text = f"У вас осталось {39-tries} попыток.\nПодождите минутку, данные загружаются")
-    text_send, page  = Search_for_jobes.search_name(user_name,page_start)
+    text_send, page  = Search_for_jobs.search_name(user_name,page_start)
     for message_send in text_send:
         await context.bot.send_message(chat_id = update.effective_chat.id, text = message_send[:4096])
     keyboard = [[InlineKeyboardButton("Загрузи информацию из других страниц", callback_data = f"{tries},{page},NAME,{user_name}")],[InlineKeyboardButton("Хватит", callback_data = "2") ]]
@@ -84,7 +84,7 @@ async def load_company(update: Update, context: ContextTypes.DEFAULT_TYPE, page_
     await context.bot.send_message(chat_id = update.effective_chat.id, text =f"Отлично! будем искать профессию по по компании: {user_name}")
     print('started...')
     await context.bot.send_message(chat_id = update.effective_chat.id, text = f"У вас осталось {39-tries} попыток.\nПодождите минутку, данные загружаются")
-    text_send, page  = Search_for_jobes.search_company(user_name,page_start)
+    text_send, page  = Search_for_jobs.search_company(user_name,page_start)
     for message_send in text_send:
         await context.bot.send_message(chat_id = update.effective_chat.id, text = message_send[:4096])
     keyboard = [[InlineKeyboardButton("Загрузи информацию из других страниц", callback_data = f"{tries},{page},COMPANY,{user_name}")],[InlineKeyboardButton("Хватит", callback_data = "2") ]]
@@ -104,7 +104,7 @@ async def load_salary(update: Update, context: ContextTypes.DEFAULT_TYPE, page_s
     await context.bot.send_message(chat_id = update.effective_chat.id, text =f"Отлично! будем искать профессию по ключевому слову: {user_name}")
     print('started...')
     await context.bot.send_message(chat_id = update.effective_chat.id, text = f"У вас осталось {39-tries} попыток.\nПодождите минутку, данные загружаются")
-    text_send, page  = Search_for_jobes.search_salary(user_name,page_start)
+    text_send, page  = Search_for_jobs.search_salary(user_name,page_start)
     for message_send in text_send:
         await context.bot.send_message(chat_id = update.effective_chat.id, text = message_send[:4096])
     keyboard = [[InlineKeyboardButton("Загрузи информацию из других страниц", callback_data = f"{tries},{offset},SALARY,{user_name}")],[InlineKeyboardButton("Хватит", callback_data = "2") ]]
@@ -124,7 +124,7 @@ async def load_city(update: Update, context: ContextTypes.DEFAULT_TYPE, page_sta
     await context.bot.send_message(chat_id = update.effective_chat.id, text =f"Отлично! будем искать профессию по городу: {user_name}")
     print('started...')
     await context.bot.send_message(chat_id = update.effective_chat.id, text = f"У вас осталось {39-tries} попыток.\nПодождите минутку, данные загружаются")
-    text_send, page  = Search_for_jobes.search_city(user_name,page_start)
+    text_send, page  = Search_for_jobs.search_city(user_name,page_start)
     for message_send in text_send:
         await context.bot.send_message(chat_id = update.effective_chat.id, text = message_send[:4096])
     keyboard = [[InlineKeyboardButton("Загрузи информацию из других страниц", callback_data = f"{tries},{page},CITY,{user_name}")],[InlineKeyboardButton("Хватит", callback_data = "2") ]]
