@@ -24,7 +24,7 @@ class Vacancy:
         return f"Название : {self.name}\nОпыт : {self.name}\nЗарплата : {self.salary}\nВыплаты : {self.pays}\nКомпания : {self.company}\nГород : {self.city}"
 
 
-class Search_for_jobes:
+class Search_for_jobs:
     @classmethod
     def generate(cls,page):
         page+=1
@@ -99,5 +99,3 @@ class Search_for_jobes:
         top_10 =sorted([i for i in vacancy_list if i.max_salary.isdigit()], key = lambda x: int(x.max_salary),reverse = True)
         return [f"Место {top_10.index(i)+1}\n{Vacancy.__str__(i)}" for i in top_10[:10]]
 
-
-print(Search_for_jobes.view_top_10())
